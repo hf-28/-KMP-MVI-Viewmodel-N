@@ -7,7 +7,6 @@ A minimal, production-ready example of sharing a ViewModel between **Android (Je
 ## The Idea
 
 Write your ViewModel logic **once in Kotlin**. Both platforms consume the same state, dispatch the same actions, and react to the same side effects — with zero duplication.
-
 ```
 ┌─────────────────────────────────┐
 │         Shared KMM Module       │
@@ -79,10 +78,6 @@ val state = vm.use(initEvent = InitEvent.Once(Action.ViewReady)) { effect ->
     }
 }
 ```
-
-- `InitEvent.Once` — fires `ViewReady` once, even after back-stack return
-- `InitEvent.OnScreenAppear` — fires every time the screen enters composition
-- Returns `State` directly, ready to use in Compose
 
 ---
 
